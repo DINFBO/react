@@ -1,21 +1,32 @@
 import  React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Detail from "./routes/Detail";
-import Home from "./routes/Home.jsx";
+import styled from "styled-components";
+
+const Father = styled.div`
+    display:flex;
+  `;
+
+const BoxOne = styled.div`
+    background-color:teal;
+    width: 100px;
+    height: 100px;
+  `;
+const BoxTwo = styled.div`
+    background-color:tomato;
+    width: 100px;
+    height: 100px;
+  `;
+const Text = styled.span`
+    color: white;
+  `;
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/movie/:id">
-          <Detail />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <Father>
+      <BoxOne>
+        <Text> hello</Text>
+      </BoxOne>
+      <BoxTwo />
+    </Father>
   );
 }
 
