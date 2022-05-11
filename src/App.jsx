@@ -1,32 +1,58 @@
 import  React from 'react';
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
-const Father = styled.div`
+const Title = styled.h1`
+  color: ${(props) => props.theme.textColor};
+  background-color: ${(props) => props.theme.backgroundColor};
+`;
+
+const Wrapper = styled.div`
     display:flex;
   `;
 
-const BoxOne = styled.div`
-    background-color:teal;
-    width: 100px;
-    height: 100px;
-  `;
-const BoxTwo = styled.div`
+const rotationAnimation = keyframes`
+  0% {
+    transform:rotate(0deg);
+    border-radius:0px;
+  }
+  50% {
+    border-radius:100px;
+  }
+  100%{
+    transform:rotate(360deg);
+    border-radius:0px;
+  }
+`;
+
+const Box = styled.div`
+  height: 100px;
+  width: 100px;
+  background-color: tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ${rotationAnimation} 1s linear infinite;
+  span{
+    font-size:30px;
+    &:hover{
+      font-size:70px;
+    }
+  }
+`;
+
+const Input = styled.input.attrs({required: true})`
     background-color:tomato;
-    width: 100px;
-    height: 100px;
-  `;
-const Text = styled.span`
-    color: white;
   `;
 
 function App() {
   return (
-    <Father>
-      <BoxOne>
-        <Text> hello</Text>
-      </BoxOne>
-      <BoxTwo />
-    </Father>
+    <Wrapper as="header">
+      <Box>
+        <span>🤩</span>
+      </Box>
+      <Title>안녕하세요!</Title>
+    </Wrapper>
+      
   );
 }
 
