@@ -23,6 +23,7 @@ function Detail() {
     <div>
       <img src={movie.background_image}/>
       <h1>{movie.title_long}</h1>
+      <h2>별점 : {movie.rating}</h2>
       <p>{movie.description_intro}</p>
     </div>
   );

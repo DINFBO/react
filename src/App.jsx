@@ -8,9 +8,6 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/hello">
-          <h1>Hello</h1>
-        </Route>
         <Route path="/movie/:id">
           <Detail />
         </Route>
